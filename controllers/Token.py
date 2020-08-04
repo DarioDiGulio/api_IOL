@@ -1,5 +1,5 @@
 import requests
-from util.constants import USUARIO, CONTRASÑEA, GRANT_TYPE, URL_TOKEN
+from util.constants import USER, PASS, GRANT_TYPE, URL_TOKEN
 
 
 class Token(object):
@@ -11,8 +11,8 @@ class Token(object):
         }
 
         body = {
-            'username': USUARIO,
-            'password': CONTRASÑEA,
+            'username': USER,
+            'password': PASS,
             'grant_type': GRANT_TYPE
         }
         response = requests.post(
