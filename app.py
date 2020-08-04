@@ -1,5 +1,7 @@
 from controllers.Token import *
 from controllers.MiCuenta import *
+from controllers.Titulos import *
+from util.constants import COUNTRIES
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -14,15 +16,28 @@ def getToken():
 def getMicuenta():
     return MiCuenta.getEstadoCuenta()
 
+@untested
+@app.route('/portafolio/<pais>')
+def getPortafolioArg(pais='argentina'):
+    if pais in COUNTRIES:
+        return MiCuenta.getPortafolio(str(pais))
+    else:
+        abort(404, description="Params not found")
 
-@app.route('/portafolio/arg')
-def getPortafolioArg():
-    return MiCuenta.getPortafolio('argentina')
+@untested
+@app.route('/titulos')
+def getTitulos():
+    titulos = Titulos()
+    return titulos.getTitulos()
 
-
-@app.route('/portafolio/usa')
-def getPortafolioUsa():
-    return MiCuenta.getPortafolio('estados_Unidos')
+@untested
+@app.route('/cotizaciones/<pais>')
+def getCotizaciones(pais='argentina'):
+    if pais in COUNTRIES:
+        titulos = Titulos()
+        return titulos.getCotizaciones(pais)
+    else:
+        abort(404, description="Params not found")
 
 
 if __name__ == '__main__':
