@@ -1,2 +1,3 @@
 *.pyc
 constants.py
+/.vscode
