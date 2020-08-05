@@ -15,6 +15,5 @@ class Token(object):
             'password': PASS,
             'grant_type': GRANT_TYPE
         }
-        response = requests.post(
-            f'{URL_TOKEN}', headers=headers, data=body)
+        response = requests.post(URL_TOKEN, headers=headers, data=body)
         return response.json()['access_token']
