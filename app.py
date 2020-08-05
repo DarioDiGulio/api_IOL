@@ -45,7 +45,10 @@ def getTitulos():
 @app.route('/cotizaciones/<pais>')
 def getCotizaciones(pais='argentina'):
     try:
-        return Titulos().getCotizaciones(str(pais))
+        if pais in COUNTRIES:
+            return Titulos().getCotizaciones(str(pais))
+        else:
+            abort(400, description="Params not found")
     except:
         abort(404, description="An error occurred")
 
