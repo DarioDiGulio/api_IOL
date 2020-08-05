@@ -9,30 +9,45 @@ app = Flask(__name__)
 
 @app.route('/getToken')
 def getToken():
-    return Token.getToken()
+    try:
+        return Token.getToken()
+    except:
+        abort(404, description="An error occurred")
 
 
 @app.route('/micuenta')
 def getMicuenta():
-    return MiCuenta.getEstadoCuenta()
+    try:
+        return MiCuenta.getEstadoCuenta()
+    except:
+        abort(404, description="An error occurred")
 
 
 @app.route('/portafolio/<pais>')
 def getPortafolioArg(pais='argentina'):
-    if pais in COUNTRIES:
-        return MiCuenta.getPortafolio(str(pais))
-    else:
-        abort(400, description="Params not found")
+    try:
+        if pais in COUNTRIES:
+            return MiCuenta.getPortafolio(str(pais))
+        else:
+            abort(400, description="Params not found")
+    except:
+        abort(404, description="An error occurred")
 
 
 @app.route('/titulos')
 def getTitulos():
-    return Titulos().getTitulos()
+    try:
+        return Titulos().getTitulos()
+    except:
+        abort(404, description="An error occurred")
 
 
 @app.route('/cotizaciones/<pais>')
 def getCotizaciones(pais='argentina'):
-    return Titulos().getCotizaciones(str(pais))
+    try:
+        return Titulos().getCotizaciones(str(pais))
+    except:
+        abort(404, description="An error occurred")
 
 
 if __name__ == '__main__':
