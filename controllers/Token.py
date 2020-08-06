@@ -1,5 +1,6 @@
 import requests
-from util.constants import USER, PASS, GRANT_TYPE, URL_TOKEN
+from util.constants import GRANT_TYPE, URL_TOKEN
+from util.private_constants import USER, PASS
 
 
 class Token(object):

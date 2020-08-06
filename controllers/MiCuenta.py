@@ -6,6 +6,9 @@ from controllers.Token import *
 
 class MiCuenta(object):
 
+    def __init__(self):
+        self.headers = {'Authorization': f'Bearer {Token.getToken()}'}
+
     @staticmethod
     def getEstadoCuenta():
         headers = {
@@ -34,4 +37,10 @@ class MiCuenta(object):
 
         response = requests.get(
             f'{URL_API}/operaciones/{number}', headers=headers)
+        return json.loads(response.text)
+
+
+    def get_operaciones(self):
+        response = requests.get(
+            f'{URL_API}/operaciones', headers=headers)
         return json.loads(response.text)
