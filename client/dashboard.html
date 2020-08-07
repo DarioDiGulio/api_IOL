@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit-icons.min.js"></script>
+
+    <!-- CUSTOM -->
+    <link rel="stylesheet" href="style/loader.css">
+    <script src="js/micuenta/micuenta.js"></script>
+    <script src="js/micuenta/portafolio.js"></script>
+    <script src="js/constants.js"></script>
+</head>
+
+<body>
+    <button class="uk-button uk-button-small uk-button-secondary" id="button-miCuenta">Mi Cuenta</button>
+    <button class="uk-button uk-button-small uk-button-secondary" id="button-portafolio">Portafolio</button>
+    <div id="miCuenta-block" hidden>
+        <div class="loader">Loading...</div>
+        <div id="micuenta" hidden>
+            <h2 class="uk-text-center">Mi cuenta</h2>
+            <h3 class="uk-text-center">ARS</h3>
+            <table class="uk-table uk-table-divider">
+                <thead>
+                    <tr>
+                        <th>Comprometido</th>
+                        <th>Disponible</th>
+                        <th>Estado</th>
+                        <th>Margen descubierto</th>
+                        <th>Moneda</th>
+                        <th>Saldo</th>
+                        <th>Titulos valorizados</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="ars.table.comprometido"></td>
+                        <td id="ars.table.disponible"></td>
+                        <td id="ars.table.estado"></td>
+                        <td id="ars.table.margen"></td>
+                        <td id="ars.table.moneda"></td>
+                        <td id="ars.table.saldo"></td>
+                        <td id="ars.table.valorizados"></td>
+                        <td id="ars.table.total"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="uk-text-center">DOLAR</h3>
+            <table class="uk-table uk-table-divider">
+                <thead>
+                    <tr>
+                        <th>Comprometido</th>
+                        <th>Disponible</th>
+                        <th>Estado</th>
+                        <th>Margen descubierto</th>
+                        <th>Moneda</th>
+                        <th>Saldo</th>
+                        <th>Titulos valorizados</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="dolar.table.comprometido"></td>
+                        <td id="dolar.table.disponible"></td>
+                        <td id="dolar.table.estado"></td>
+                        <td id="dolar.table.margen"></td>
+                        <td id="dolar.table.moneda"></td>
+                        <td id="dolar.table.saldo"></td>
+                        <td id="dolar.table.valorizados"></td>
+                        <td id="dolar.table.total"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="portafolio-block" hidden>
+        <div class="loader">Loading...</div>
+        <div id="portafolio" hidden>
+            <h2 class="uk-text-center">Portafolio</h2>
+            <h3 class="uk-text-center">Mercado argentino</h3>
+            <table class="uk-table uk-table-divider">
+                <thead>
+                    <tr>
+                        <th>cantidad</th>
+                        <th>titulo</th>
+                        <th>comprometido</th>
+                        <th>gananciaDinero</th>
+                        <th>gananciaPorcentaje</th>
+                        <th>ppc</th>
+                        <th>puntosVariacion</th>
+                        <th>ultimoPrecio</th>
+                        <th>valorizado</th>
+                        <th>variacionDiaria</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="portafolio.argentina.cantidad"></td>
+                        <td id="portafolio.argentina.titulo"></td>
+                        <td id="portafolio.argentina.comprometido"></td>
+                        <td id="portafolio.argentina.gananciaDinero"></td>
+                        <td id="portafolio.argentina.gananciaPorcentaje"></td>
+                        <td id="portafolio.argentina.ppc"></td>
+                        <td id="portafolio.argentina.puntosVariacion"></td>
+                        <td id="portafolio.argentina.ultimoPrecio"></td>
+                        <td id="portafolio.argentina.valorizado"></td>
+                        <td id="portafolio.argentina.variacionDiaria"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="uk-text-center">Mercado de Estados Unidos</h3>
+            <table class="uk-table uk-table-divider">
+                <thead>
+                    <tr>
+                        <th>cantidad</th>
+                        <th>titulo</th>
+                        <th>comprometido</th>
+                        <th>gananciaDinero</th>
+                        <th>gananciaPorcentaje</th>
+                        <th>ppc</th>
+                        <th>puntosVariacion</th>
+                        <th>ultimoPrecio</th>
+                        <th>valorizado</th>
+                        <th>variacionDiaria</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="portafolio.estadosUnidos.cantidad"></td>
+                        <td id="portafolio.estadosUnidos.titulo"></td>
+                        <td id="portafolio.estadosUnidos.comprometido"></td>
+                        <td id="portafolio.estadosUnidos.gananciaDinero"></td>
+                        <td id="portafolio.estadosUnidos.gananciaPorcentaje"></td>
+                        <td id="portafolio.estadosUnidos.ppc"></td>
+                        <td id="portafolio.estadosUnidos.puntosVariacion"></td>
+                        <td id="portafolio.estadosUnidos.ultimoPrecio"></td>
+                        <td id="portafolio.estadosUnidos.valorizado"></td>
+                        <td id="portafolio.estadosUnidos.variacionDiaria"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js/events.js"></script>
+</body>
+
+</html>

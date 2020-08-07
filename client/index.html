@@ -5,40 +5,33 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit-icons.min.js"></script>
 
-    <!-- Metro 4 -->
-    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+    <!-- CUSTOM -->
+    <link rel="stylesheet" href="style/loader.css">
+    <script src="js/login/login.js"></script>
+    <script src="js/constants.js"></script>
 </head>
 
 <body>
-    <div data-role="appbar" data-expand-point="md">
-        <a href="#" class="brand no-hover">
-            <span style="width: 55px;" class="p-2 border bd-dark border-radius">
-                m<sup>4</sup>
-            </span>
-        </a>
-        <img data-role="gravatar" data-email="dariodigulio@gmail.com" data-default="mp">
-        <ul class="app-bar-menu">
-            <li><a href="#">Home</a></li>
-            <li>
-                <a href="#" class="dropdown-toggle">Products</a>
-                <ul class="d-menu" data-role="dropdown">
-                    <li><a href="#">Windows 10</a></li>
-                    <li><a href="#">Office 365</a></li>
-                    <li class="divider bg-lightGray"></li>
-                    <li><a href="#">Skype</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contacts</a></li>
-        </ul>
-        <button type="reset">
-            <div data-role="activity" data-type="ring" data-style="color"></div>
-        </button>
+    <div class="uk-position-center uk-overlay uk-overlay-default">
+        <div class="uk-card uk-card-secondary uk-card-body">
+            <h1 class="uk-text-center">Acceso</h1>
+            <p class="uk-text-success">Ingresá tus datos de acceso a tu cuenta de Invertir Online</p>
+            <div class="uk-margin">
+                <input class="uk-input" type="email" placeholder="usuario" id="user">
+            </div>
+            <div class="uk-margin">
+                <input class="uk-input" type="password" placeholder="password" id="password">
+            </div>
+            <button class="uk-button uk-button-danger uk-button-small uk-width-1-1" id="button-submit">Acceder</button>
+        </div>
     </div>
-
-    <!-- Metro 4 -->
-    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+    <script src="js/events.js"></script>
 </body>
 
 </html>
