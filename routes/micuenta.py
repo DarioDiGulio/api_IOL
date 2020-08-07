@@ -2,9 +2,11 @@ from controllers.MiCuenta import *
 from flask import Flask, request, abort
 from util.constants import COUNTRIES
 from app import app
+from flask_cors import CORS, cross_origin
 
 
 @app.route('/micuenta')
+@cross_origin()
 def getMicuenta():
     try:
         return MiCuenta.getEstadoCuenta()
