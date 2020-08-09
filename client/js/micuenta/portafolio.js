@@ -8,7 +8,9 @@ const getDataPortafolio = mercado => {
         })
         .then(data => {
             setData(data.pais, data.activos)
-            (data.pais === 'estados_Unidos' && mostrarPortafolio())
+        })
+        .then(() => {
+            mostrarPortafolio()
         })
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);
