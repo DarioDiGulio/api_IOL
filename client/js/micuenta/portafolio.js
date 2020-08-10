@@ -19,21 +19,29 @@ const getDataPortafolio = mercado => {
 
 const setData = (pais, activos) => {
     let id = `portafolio.${pais}`
+    let country = pais === 'argentina' ? 'arg' : 'usa'
     for (const activo of activos) {
-        document.getElementById(`${id}.cantidad`).innerText = activo.cantidad
-        document.getElementById(`${id}.titulo`).innerText = activo.titulo.descripcion
-        document.getElementById(`${id}.comprometido`).innerText = activo.comprometido
-        document.getElementById(`${id}.gananciaDinero`).innerText = activo.gananciaDinero
-        document.getElementById(`${id}.gananciaPorcentaje`).innerText = activo.gananciaPorcentaje
-        document.getElementById(`${id}.ppc`).innerText = activo.ppc
-        document.getElementById(`${id}.puntosVariacion`).innerText = activo.puntosVariacion
-        document.getElementById(`${id}.ultimoPrecio`).innerText = activo.ultimoPrecio
-        document.getElementById(`${id}.valorizado`).innerText = activo.valorizado
-        document.getElementById(`${id}.variacionDiaria`).innerText = activo.variacionDiaria
+        document.getElementById(`porfolio-${country}-body`).innerHTML += createRowPorfolio(activo)
     }
 }
 
 const mostrarPortafolio = () => {
     document.getElementsByClassName('loader')[1].hidden = true
     document.querySelector('#portafolio').hidden = false
+}
+
+const createRowPorfolio = activo => {
+    return `
+    <tr>
+        <td>${activo.cantidad}</td>
+        <td>${activo.titulo.descripcion}</td>
+        <td>${activo.comprometido}</td>
+        <td>${activo.gananciaDinero}</td>
+        <td>${activo.gananciaPorcentaje}</td>
+        <td>${activo.ppc}</td>
+        <td>${activo.puntosVariacion}</td>
+        <td>${activo.ultimoPrecio}</td>
+        <td>${activo.valorizado}</td>
+        <td>${activo.variacionDiaria}</td>
+    </tr>`
 }
