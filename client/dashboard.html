@@ -10,12 +10,14 @@
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit-icons.min.js"></script>
-
+    <!-- CHART.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <!-- CUSTOM -->
     <link rel="stylesheet" href="style/loader.css">
     <script src="js/micuenta/micuenta.js"></script>
     <script src="js/micuenta/portafolio.js"></script>
     <script src="js/micuenta/operaciones.js"></script>
+    <script src="js/titulos/historico.js"></script>
     <script src="js/constants.js"></script>
 </head>
 
@@ -23,6 +25,7 @@
     <button class="uk-button uk-button-small uk-button-secondary" id="button-miCuenta">Mi Cuenta</button>
     <button class="uk-button uk-button-small uk-button-secondary" id="button-portafolio">Portafolio</button>
     <button class="uk-button uk-button-small uk-button-secondary" id="button-operaciones">Operaciones</button>
+    <button class="uk-button uk-button-small uk-button-secondary" id="button-historico">Histórico</button>
     <div id="miCuenta-block" hidden>
         <div class="loader">Loading...</div>
         <div id="micuenta" hidden>
@@ -175,6 +178,38 @@
                     </tr>
                 </thead>
                 <tbody id="operaciones-usa-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="historico-block" hidden>
+        <div class="loader">Loading...</div>
+        <div id="historico" hidden>
+            <h2 class="uk-text-center">Serie Histórica</h2>
+            <h3 class="uk-text-center">Mercado bCBA</h3>
+            <h3 class="uk-text-center">Símbolo ALUA</h3>
+            <table class="uk-table uk-table-hover uk-table-divider">
+                <thead>
+                    <tr>
+                        <th>apertura</th>
+                        <th>cantidad Operaciones</th>
+                        <th>cierre Anterior</th>
+                        <th>fechaHora</th>
+                        <th>intereses Abiertos</th>
+                        <th>maximo</th>
+                        <th>minimo</th>
+                        <th>moneda</th>
+                        <th>monto Operado</th>
+                        <th>precio Ajuste</th>
+                        <th>precio Promedio</th>
+                        <th>puntas</th>
+                        <th>tendencia</th>
+                        <th>ultimo Precio</th>
+                        <th>variacion</th>
+                        <th>volumen Nominal</th>
+                    </tr>
+                </thead>
+                <tbody id="historico-body">
                 </tbody>
             </table>
         </div>

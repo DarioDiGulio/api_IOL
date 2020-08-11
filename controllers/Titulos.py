@@ -2,8 +2,7 @@ import requests
 from controllers.Token import *
 from util.constants import URL_API
 import json
-from json import dumps
-from flask import Flask, make_response
+from flask import Flask
 
 
 class Titulos(object):
@@ -13,14 +12,18 @@ class Titulos(object):
 
     def getTitulos(self):
         response = requests.get(f'{URL_API}/Titulos/FCI', headers=self.headers)
-        return make_response(dumps(response.json()))
+        res = {'response': response.json()}
+        return res
 
     def getCotizaciones(self, pais):
         response = requests.get(
             f'{URL_API}/{pais}/Titulos/Cotizacion/Instrumentos', headers=self.headers)
-        return make_response(dumps(response.json()))
+        res = {'response': response.json()}
+
+        return res
 
     def get_serie_historica(self, mercado, simbolo, desde, hasta):
         response = requests.get(
             f'{URL_API}/{mercado}/Titulos/{simbolo}/Cotizacion/seriehistorica/{desde}/{hasta}/ajustada', headers=self.headers)
-        return make_response(dumps(response.json()))
+        res = {'response': response.json()}
+        return res

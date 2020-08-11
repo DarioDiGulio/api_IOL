@@ -23,6 +23,11 @@ if (isLogin) {
         getDataOperaciones('todas', 'argentina')
         getDataOperaciones('todas', 'estados_Unidos')
     })
+    
+    document.getElementById('button-historico').addEventListener('click', () => {
+        document.querySelector('#historico-block').hidden = false
+        getSerieHistorica()
+    })
 }
 
 
