@@ -1,21 +1,22 @@
 from app import app
 from controllers.Token import *
-from flask import request, abort
-from flask_cors import CORS, cross_origin
+from flask import abort
+from flask_cors import cross_origin
 
 
-@app.route('/getToken')
+@app.route('/get_token')
 @cross_origin()
-def getToken():
+def get_token():
     try:
-        return Token.getToken()
+        return Token.get_token()
     except:
         abort(404, description="An error occurred")
 
-@app.route('/checkToken/<user>/<password>')
+
+@app.route('/check_token/<user>/<password>')
 @cross_origin()
-def checkToken(user, password):
+def check_token(user, password):
     try:
-        return Token.checkToken(user, password)
+        return Token.check_token(user, password)
     except:
         abort(404, description="An error occurred")

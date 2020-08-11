@@ -1,25 +1,25 @@
 from controllers.MiCuenta import *
-from flask import Flask, request, abort
+from flask import abort
 from util.constants import COUNTRIES, STATE
 from app import app
-from flask_cors import CORS, cross_origin
+from flask_cors import cross_origin
 
 
 @app.route('/micuenta')
 @cross_origin()
-def getMicuenta():
+def get_micuenta():
     try:
-        return MiCuenta().getEstadoCuenta()
+        return MiCuenta().get_estado_cuenta()
     except:
         abort(404, description="An error occurred")
 
 
 @app.route('/portafolio/<pais>')
 @cross_origin()
-def getPortafolioArg(pais='argentina'):
+def get_portafolio_arg(pais='argentina'):
     try:
         if pais in COUNTRIES:
-            return MiCuenta().getPortafolio(str(pais))
+            return MiCuenta().get_portafolio(str(pais))
         else:
             abort(400, description="Params not found")
     except:
@@ -36,4 +36,3 @@ def getOperaciones(state, country):
             abort(400, description="Params not found")
     except:
         abort(404, description='An error ocurred')
-    

@@ -7,7 +7,7 @@ from util.private_constants import USER_A, USER_B, USER_C, PASS_A, PASS_B, PASS_
 class Token(object):
 
     @staticmethod
-    def getToken():
+    def get_token():
         headers = {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
@@ -22,7 +22,7 @@ class Token(object):
         return res.json()['access_token']
 
     @staticmethod
-    def checkToken(user, password):
+    def check_token(user, password):
         headers = {
             'Content-Type': 'application/x-www-form-urlencoded'
         }

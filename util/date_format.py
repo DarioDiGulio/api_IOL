@@ -1,4 +1,4 @@
-from datetime import date, time
+from datetime import date
 
 
 def today():
@@ -10,12 +10,12 @@ def date_format(day, month, year):
 
 
 def current_day():
-    return date.today.day
+    return date.today().day
 
 
 def current_month():
-    return date.today.month
+    return date.today().month
 
 
 def current_year():
-    return date.today.year
+    return date.today().year

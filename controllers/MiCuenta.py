@@ -9,15 +9,15 @@ from flask import Flask, make_response
 class MiCuenta(object):
 
     def __init__(self):
-        self.headers = {'Authorization': f'Bearer {Token.getToken()}'}
+        self.headers = {'Authorization': f'Bearer {Token.get_token()}'}
 
-    def getEstadoCuenta(self):
+    def get_estado_cuenta(self):
 
         response = requests.get(
             f'{URL_API}/estadocuenta', headers=self.headers)
         return json.loads(response.text)
 
-    def getPortafolio(self, pais):
+    def get_portafolio(self, pais):
 
         response = requests.get(
             f'{URL_API}/portafolio/{pais}', headers=self.headers)
