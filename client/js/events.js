@@ -17,6 +17,12 @@ if (isLogin) {
         getDataPortafolio('argentina')
         getDataPortafolio('estados_Unidos')
     })
+
+    document.getElementById('button-operaciones').addEventListener('click', () => {
+        document.querySelector('#operaciones-block').hidden = false
+        getDataOperaciones('todas', 'argentina')
+        getDataOperaciones('todas', 'estados_Unidos')
+    })
 }
 
 

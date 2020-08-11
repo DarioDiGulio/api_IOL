@@ -15,12 +15,14 @@
     <link rel="stylesheet" href="style/loader.css">
     <script src="js/micuenta/micuenta.js"></script>
     <script src="js/micuenta/portafolio.js"></script>
+    <script src="js/micuenta/operaciones.js"></script>
     <script src="js/constants.js"></script>
 </head>
 
 <body>
     <button class="uk-button uk-button-small uk-button-secondary" id="button-miCuenta">Mi Cuenta</button>
     <button class="uk-button uk-button-small uk-button-secondary" id="button-portafolio">Portafolio</button>
+    <button class="uk-button uk-button-small uk-button-secondary" id="button-operaciones">Operaciones</button>
     <div id="miCuenta-block" hidden>
         <div class="loader">Loading...</div>
         <div id="micuenta" hidden>
@@ -121,6 +123,58 @@
                     </tr>
                 </thead>
                 <tbody id="portfolio-usa-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="operaciones-block" hidden>
+        <div class="loader">Loading...</div>
+        <div id="operaciones" hidden>
+            <h2 class="uk-text-center">Operaciones</h2>
+            <h3 class="uk-text-center">Mercado argentino</h3>
+            <table class="uk-table uk-table-hover uk-table-divider">
+                <thead>
+                    <tr>
+                        <th>numero</th>
+                        <th>fecha Orden</th>
+                        <th>tipo</th>
+                        <th>estado</th>
+                        <th>mercado</th>
+                        <th>simbolo</th>
+                        <th>cantidad</th>
+                        <th>monto</th>
+                        <th>modalidad</th>
+                        <th>precio</th>
+                        <th>fecha Operada</th>
+                        <th>cantidad Operada</th>
+                        <th>precio Operado</th>
+                        <th>monto Operado</th>
+                    </tr>
+                </thead>
+                <tbody id="operaciones-arg-body">
+                </tbody>
+            </table>
+            <h3 class="uk-text-center">Mercado de Estados Unidos</h3>
+            <table class="uk-table uk-table-hover uk-table-divider">
+                <thead>
+                    <tr>
+                        <th>numero</th>
+                        <th>fechaOrden</th>
+                        <th>tipo</th>
+                        <th>estado</th>
+                        <th>mercado</th>
+                        <th>simbolo</th>
+                        <th>cantidad</th>
+                        <th>monto</th>
+                        <th>modalidad</th>
+                        <th>precio</th>
+                        <th>fechaOperada</th>
+                        <th>cantidadOperada</th>
+                        <th>precioOperado</th>
+                        <th>montoOperado</th>
+                    </tr>
+                </thead>
+                <tbody id="operaciones-usa-body">
                 </tbody>
             </table>
         </div>

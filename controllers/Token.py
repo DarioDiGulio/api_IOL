@@ -1,7 +1,8 @@
 import requests
 from flask import Response
 from util.constants import GRANT_TYPE, URL_TOKEN
-from util.private_constants import USER_A, USER_B, PASS_A, PASS_B
+from util.private_constants import USER_A, USER_B, USER_C, PASS_A, PASS_B, PASS_C
+
 
 class Token(object):
 
@@ -12,12 +13,12 @@ class Token(object):
         }
 
         body = {
-            'username': USER_A,
-            'password': PASS_A,
+            'username': USER_C,
+            'password': PASS_C,
             'grant_type': GRANT_TYPE
         }
         res = requests.post(URL_TOKEN, headers=headers, data=body)
-        
+
         return res.json()['access_token']
 
     @staticmethod
