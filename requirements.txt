@@ -37,7 +37,7 @@ lazr.restfulclient==0.13.5
 lazr.uri==1.0.3
 louis==3.5.0
 lxml==4.2.1
-Mako==1.0.7
+Mako==1.2.2
 MarkupSafe==1.1.1
 mate-hud==18.4.8
 mate-tweak==18.4.16
